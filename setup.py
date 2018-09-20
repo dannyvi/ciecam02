@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="ciecam02",
-    version="1.0.5",
+    version="1.0.6",
     author="Dannyvi",
     author_email="dannyvis@icloud.com",
     description="An easy fast transformer between rgb and ciecam02 color space.",

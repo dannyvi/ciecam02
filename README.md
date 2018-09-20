@@ -73,14 +73,20 @@ Basic functions:
 
     import numpy as np
     from ciecam02 import rgb2jch, jch2rgb
-    color = np.array([[56, 34, 199],
-                      [255, 255, 255]
-                      ])
+    rgb = np.array([[56, 34, 199],
+                    [255, 255, 255]
+                    ])
                       
-    rgb2jch(a)
+    rgb2jch(rgb)
                   
-    output: [[ 21.4432157   74.80048318 284.3167947 ]
-             [ 99.99968129   1.49090566 242.41103965]]
+    Out[]: array([[ 21.4432157,  74.80048318, 284.3167947 ],
+                  [ 99.99968129,  1.49090566, 242.41103965]])
+             
+    jch2rgb(rgb2jch(rgb))
+    
+    Out[]:
+        array([[ 56,  34, 199],
+               [255, 255, 255]], dtype=uint8)
 
 For image analyzing, convert image rgb data to np.array flattened to a 2d array,
 then apply the transform:
