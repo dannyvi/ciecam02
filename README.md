@@ -118,27 +118,27 @@ The procedures rely on an intermediate representation of xyz color space.
 Forward and reverse transform first comes to xyz, then do transformation
 to the target space. 
 
-*rgb2xyz(rgb)*:
-    returns an xyz 2d array astype `float` shapes [[x, y, z], ...].
+- **rgb2xyz(rgb)** :
+  |  returns an xyz 2d array astype `float` shapes [[x, y, z], ...].
 
-*xyz2rgb(xyz)*:
-    returns an rgb array astype `uint8`. coud convert to Image object
-    by `Image.fromarray(rgb)`
+- **xyz2rgb(xyz)** :
+  |  returns an rgb array astype `uint8`. coud convert to Image object
+  |  by `Image.fromarray(rgb)`
 
-*xyz2infinitergb(xyz)*:
-    returns an rgb array with exceeded values in a `float` astype. if you
-    want transform to an image object, you should convert to a `uint8` first. 
+- **xyz2infinitergb(xyz)** :
+  |  returns an rgb array with exceeded values in a `float` astype. if you
+  |  want transform to an image object, you should convert to a `uint8` first. 
     
-*xyz2cam02(xyz)*:
-    returns the full property of features that cam02 solves, with data undistorted.
-    [[h, H, J, Q, C, M, s],...]
+- **xyz2cam02(xyz)** :
+  |  returns the full property of features that cam02 solves, with data undistorted.
+  |  [[h, H, J, Q, C, M, s],...]
 
-*rgb2jch(color)*:
-    returns a jch array. It is a compound of 'xyz2cam02(rgb2xyz)', then select
-    J, C, H compressed out in a `float` type.
+- **rgb2jch(color)**:
+  |  returns a jch array. It is a compound of 'xyz2cam02(rgb2xyz)', then select
+  |  J, C, H compressed out in a `float` type.
 
-*jch2xyz(jch)*:
-    returns an xyz array in a `float` type.
+- **jch2xyz(jch)**:
+  |  returns an xyz array in a `float` type.
     
 
 *jch2rgb(jch)*:
