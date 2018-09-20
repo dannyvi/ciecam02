@@ -8,9 +8,9 @@ doing algorithms of images, displaying, etc.
 introduce
 ---------
 
-[Munsell color system](img/Moncell-system.png)
+[Munsell color system](https://en.wikipedia.org/wiki/Munsell_color_system)
 
-![img](https://en.wikipedia.org/wiki/File:Munsell-system.svg)
+![img](img/Moncell-system.png)
 
 [CIECAM02](https://en.wikipedia.org/wiki/CIECAM02) approximately linearize 
 Moncell color system.
@@ -40,10 +40,6 @@ c values the same as C, the chroma.
 h compress the original H from 0-400 to 0-360 by simply * 0.9 for 
 represents in a polar coordinates.
 
-install
---------
-
-    pip install ciecam02
 
 Usage
 -----
