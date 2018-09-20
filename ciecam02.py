@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def xyz2infinityrgb(xyz):
+def xyz2infinitergb(xyz):
     xyz = xyz/100.0
 
     M_1 = np.array([[3.2406, -1.5372, -0.4986],
