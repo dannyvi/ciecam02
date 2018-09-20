@@ -8,7 +8,7 @@ doing algorithms of images, displaying, etc.
 introduce
 ---------
 
-[Munsell color system](https://en.wikipedia.org/wiki/Munsell_color_system)
+[Munsell color system](./img/Moncell-system.png)
 
 ![img](https://en.wikipedia.org/wiki/File:Munsell-system.svg)
 
@@ -53,9 +53,9 @@ Basic functions:
                   [255, 255, 255]
                   ])
                   
-    >>> [[  6.942311     0.38424796 242.41395946]
-         [ 21.4432157   74.80048318 284.3167947 ]
-         [ 99.99968129   1.49090566 242.41103965]]
+    output: [[  6.942311     0.38424796 242.41395946]
+             [ 21.4432157   74.80048318 284.3167947 ]
+             [ 99.99968129   1.49090566 242.41103965]]
 
 
 
