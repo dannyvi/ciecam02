@@ -1,0 +1,18 @@
+Metadata-Version: 1.0
+Name: ciecam02
+Version: 0.1.12
+Summary: a set of function convert colorspace among rgb, ciexyz, ciecam02 for python2.7
+Home-page: UNKNOWN
+Author: Dannyv
+Author-email: yu.yuyudan@gmail.com
+License: BSD licence
+Description: a set of function convert colorspace among rgb ciexyz ciecam02.
+        functions:
+                xyz2rgb
+                rgb2xyz
+                xyz2cam02
+                rgb2jch
+                jch2xyz
+                jch2rgb
+        
+Platform: UNKNOWN
