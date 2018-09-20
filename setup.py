@@ -5,8 +5,8 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="ciecam02",
-    version="1.0.0",
-    author="DannyVi",
+    version="1.0.5",
+    author="Dannyvi",
     author_email="dannyvis@icloud.com",
     description="An easy fast transformer between rgb and ciecam02 color space.",
     long_description=long_description,
@@ -17,6 +17,9 @@ setuptools.setup(
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
+    ],
+    install_requires=[
+        "numpy >= 1.7.1",
     ],
 )
 
