@@ -40,6 +40,10 @@ c values the same as C, the chroma.
 h compress the original H from 0-400 to 0-360 by simply * 0.9 for 
 represents in a polar coordinates.
 
+install
+--------
+
+    pip install ciecam02
 
 Usage
 -----
