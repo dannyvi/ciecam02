@@ -40,7 +40,7 @@ j values the same as J, the brightness.
 c values the same as C, the chroma.
 
 h compress the original H from 0-400 to 0-360 by simply * 0.9 for 
-represents in a polar coordinates.
+representing in a polar coordinates.
 
 visual environment variable
 ----------------------------
@@ -48,12 +48,18 @@ visual environment variable
 Affections was considered in the ciecam02 model and several mesurement was
 constructed. We just deal them as constants.
 
- |  whitepoint = [95.05, 100.00, 108.88],
- |  env = [1.0, 0.69, 1.0],
- |  lightindensity = 80
- |  bgindensity = 16
+    whitepoint = [95.05, 100.00, 108.88],
+    env = [1.0, 0.69, 1.0],
+    lightindensity = 80
+    bgindensity = 16
 
 And you can [config](#config) these values to simulate a different environment.
+
+implementation
+--------------
+
+Implementation relies on numpy, which acts in a high performance of
+transformation. Process large image data as array at once.
 
 install
 --------
@@ -141,7 +147,7 @@ to the target space.
   >  returns an xyz array in a `float` type.
     
 
-*jch2rgb(jch)*:
+- **jch2rgb(jch)**:
   >  returns rgb array astype `uint8`. Compounds of `xyz2rgb(jch2xyz(jch))`.
 
 
@@ -202,7 +208,7 @@ Moncell:
 
 ![img](img/monsell2.png)
 
-# dimensions
+# Dimensions
     
 ![img](img/cie3.png)
 ![img](img/cie4.png)
