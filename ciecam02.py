@@ -1,15 +1,7 @@
-#!ipython
-# -*- coding:utf-8 -*-
-
-# 色彩模式转换
-
-
-# import math
 import numpy as np
-# import time
 
 
-def npxyz2infinityrgb(xyz):
+def xyz2infinityrgb(xyz):
     xyz = xyz/100.0
 
     M_1 = np.array([[3.2406, -1.5372, -0.4986],
@@ -26,7 +18,7 @@ def npxyz2infinityrgb(xyz):
     return RGB
 
 
-def npxyz2rgb(xyz):
+def xyz2rgb(xyz):
     xyz = xyz/100.0
 
     M_1 = np.array([[3.2406, -1.5372, -0.4986],
@@ -46,7 +38,7 @@ def npxyz2rgb(xyz):
     return RGB
 
 
-def nprgb2xyz(color):
+def rgb2xyz(color):
     color = color/255.0
     color = np.where(color > 0.04045, np.power(((color+0.055)/1.055), 2.4),
                      color/12.92)
@@ -55,6 +47,7 @@ def nprgb2xyz(color):
                   [0.0193, 0.1192, 0.9505]]).T
 
     return color.dot(M)*100
+
 
 whitepoint = {'white': [95.05, 100.00, 108.88],
               'c': [109.85, 100.0, 35.58]}
@@ -121,7 +114,7 @@ Bwa_ = (400 * ((FL*Bw_/100)**0.42))/(27.13+((FL*Bw_/100)**0.42))+0.1
 Aw = Nbb * (2*Rwa_+Gwa_+(Bwa_/20) - 0.305)
 
 
-def npxyz2cam02(XYZ):
+def xyz2cam02(XYZ):
     RGB = XYZ.dot(Mcat02.T)
     RcGcBc = RGB*np.array([Dr, Dg, Db])
     # step 5
@@ -148,7 +141,6 @@ def npxyz2cam02(XYZ):
         return Hue
     ufunc_TransferHue = np.frompyfunc(TransferHue, 2, 1)
     H = ufunc_TransferHue(huue, position_).astype('float')
-    # print H
     # step 9
     A = Nbb * (2*Ra_Ga_Ba_[:, 0] +
                Ra_Ga_Ba_[:, 1]+(Ra_Ga_Ba_[:, 2]/20.0) - 0.305)
@@ -165,13 +157,13 @@ def npxyz2cam02(XYZ):
     return np.array([h, H, J, Q, C, M, s]).T
 
 
-def nprgb2jch(color):
-    XYZ = nprgb2xyz(color)
-    value = npxyz2cam02(XYZ)
+def rgb2jch(color):
+    XYZ = rgb2xyz(color)
+    value = xyz2cam02(XYZ)
     return value[:, [2, 4, 1]]*np.array([1.0, 1.0, 0.9])
 
 
-def npjch2xyz(jch):
+def jch2xyz(jch):
     JCH = jch*np.array([1.0, 1.0, 10/9.0])
     J = JCH[:, 0]
     C = JCH[:, 1]
@@ -237,13 +229,14 @@ def npjch2xyz(jch):
     return XYZ
 
 
-def npjch2rgb(jch):
-    xyz = npjch2xyz(jch)
-    # print(xyz)
-    return npxyz2rgb(xyz)
+def jch2rgb(jch):
+    xyz = jch2xyz(jch)
+    return xyz2rgb(xyz)
 
 
 if __name__ == "__main__":
-    a = np.array([[20.0, 20.0, 20.0]])
-    print(npjch2xyz(a))
-    """aaaa"""
+    a = np.array([[20, 20, 20],
+                  [56, 34, 199],
+                  [255, 255, 255]
+                  ])
+    print(rgb2jch(a))

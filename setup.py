@@ -18,7 +18,7 @@ setup(
     author_email = 'yu.yuyudan@gmail.com',
     license = 'BSD licence',
     description = 'a set of function convert colorspace among rgb, ciexyz, ciecam02 for python2.7',
-    long_description = open('README.txt').read(),
+    long_description = open('README.md').read(),
     install_requires=[
         "numpy >= 1.7.1",
         "cython >= 0.19.1",
