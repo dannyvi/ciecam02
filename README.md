@@ -8,7 +8,7 @@ doing algorithms of images, displaying, etc.
 introduce
 ---------
 
-[Munsell color system](./img/Moncell-system.png)
+[Munsell color system](img/Moncell-system.png)
 
 ![img](https://en.wikipedia.org/wiki/File:Munsell-system.svg)
 
